@@ -11,7 +11,6 @@ var onFacebookLogin = function(){
           // below you get string like this: access_token=...&expires_in=...
           var params = tabs[i].url.split('#')[1];
 
-          // in my extension I have used mootools method: parseQueryString. The following code is just an example ;)
           var accessToken = params.split('&')[0];
           accessToken = accessToken.split('=')[1];
 
