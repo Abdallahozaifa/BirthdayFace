@@ -1,3 +1,7 @@
+console.log("popup.js loaded!");
+/**
+ * Allows the links to work 
+ */
 document.addEventListener('DOMContentLoaded', function () {
     console.log("entered listener!");
     var links = document.getElementsByTagName("a");

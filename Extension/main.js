@@ -1,7 +1,8 @@
+console.log("main.js loaded!");
 var successURL = 'www.facebook.com/connect/login_success.html';
 
 /**
- * Logins in to the users facebook
+ * Detects when the user is logged in
  */
 var onFacebookLogin = function(){
   if (!localStorage.getItem('accessToken')) {
@@ -25,5 +26,3 @@ console.log("Logged in!");
 chrome.tabs.onUpdated.addListener(onFacebookLogin);
 
 var redirect = "https://www.facebook.com/dialog/oauth?client_id=247875252213439&response_type=token&scope=user_friends&redirect_uri=http://www.facebook.com/connect/login_success.html";
-
-console.log("Logged into facebook!");
