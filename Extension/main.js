@@ -21,8 +21,11 @@ var onFacebookLogin = function(){
       }
     });
   }
+  console.log("Logged in!");
 }
-console.log("Logged in!");
-chrome.tabs.onUpdated.addListener(onFacebookLogin);
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+   alert("Logged in!");
+}); 
 
 var redirect = "https://www.facebook.com/dialog/oauth?client_id=247875252213439&response_type=token&scope=user_friends&redirect_uri=http://www.facebook.com/connect/login_success.html";

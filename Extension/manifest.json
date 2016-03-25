@@ -18,7 +18,7 @@
     {
       "matches": ["https://*.facebook.com/*"],
       "css": ["CSS/birthdayface.css"],
-      "js": ["External/jquery-1.12.2.min.js","main.js"]
+      "js": ["External/jquery-1.12.2.min.js", "main.js"]
     },
     {
       "matches" : ["<all_urls>"],
@@ -27,7 +27,6 @@
   ],
   
   "permissions": [
-    "tabs",
-    "http://*.facebook.com/*"
+    "tabs"
   ]
 }
