@@ -15,4 +15,4 @@ document.addEventListener('DOMContentLoaded', function () {
         })();
     }
 });
-console.log(chrome);
+// console.log(chrome.tabs);

@@ -18,13 +18,17 @@
     {
       "matches": ["https://*.facebook.com/*"],
       "css": ["CSS/birthdayface.css"],
-      "js": ["External/jquery-1.12.2.min.js", "main.js"]
+      "js": ["External/jquery-1.12.2.min.js"]
     },
     {
       "matches" : ["<all_urls>"],
       "js": ["popup.js"]
     }
   ],
+  
+  "background": {
+      "scripts": ["main.js"]
+  },
   
   "permissions": [
     "tabs"

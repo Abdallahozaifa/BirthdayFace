@@ -20,12 +20,20 @@ var onFacebookLogin = function(){
         }
       }
     });
+    alert("Logged in!");
+    return true;
   }
-  console.log("Logged in!");
+  else{
+    alert("Please Login!");
+    return false;
+  }
+  
 }
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-   alert("Logged in!");
+   if(onFacebookLogin()){
+       
+   }
 }); 
 
 var redirect = "https://www.facebook.com/dialog/oauth?client_id=247875252213439&response_type=token&scope=user_friends&redirect_uri=http://www.facebook.com/connect/login_success.html";
