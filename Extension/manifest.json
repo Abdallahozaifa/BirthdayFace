@@ -2,7 +2,8 @@
   "name": "Birthday Face",
   "author": [
       "Hozaifa Abdalla <Abdallahozaifa19527@gmail.com>",
-      "Manan Patel <mvp73192@gmail.com>"
+      "Manan Patel <mvp73192@gmail.com>",
+      "Ken Schnall <kas6570@psu.edu>"
   ],
   "version": "0.0.1",
   "manifest_version": 2,
@@ -15,14 +16,18 @@
   
   "content_scripts": [
     {
-      "matches": ["http://facebook.com/*"],
+      "matches": ["http://*.facebook.com/*"],
       "css": ["CSS/birthdayface.css"],
-      "js": ["main.js"]
+      "js": ["External/jquery-1.12.2.min.js","main.js"]
+    },
+    {
+      "matches" : ["<all_urls>"],
+      "js": ["popup.js"]
     }
   ],
   
   "permissions": [
     "tabs",
-    "https://facebook.com/*"
+    "http://*.facebook.com/*"
   ]
 }
