@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// chrome.runtime.sendMessage({greeting: "Hello Sir"});
-
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-    alert(message.greeting);
-    console.log(message.greeting);
+chrome.runtime.onMessage.addListener(function(req, res, sendResponse) {
+    console.log(req.message);
 });
