@@ -15,4 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })();
     }
 });
-// console.log(chrome.tabs);
+
+// chrome.runtime.sendMessage({greeting: "Hello Sir"});
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    alert(message.greeting);
+    console.log(message.greeting);
+});

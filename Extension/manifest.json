@@ -1,10 +1,9 @@
 {
   "name": "Birthday Face",
   "author": [
-      "Hozaifa Abdalla <Abdallahozaifa19527@gmail.com>",
-      "Manan Patel <mvp73192@gmail.com>",
-      "Ken Schnall <kas6570@psu.edu>"
+      "Hozaifa Abdalla <Abdallahozaifa19527@gmail.com>"
   ],
+  
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "Displays Personalized Happy Birthday messages to facebook friends with cool faces!",
@@ -12,6 +11,10 @@
   "browser_action": {
     "default_icon": "/Images/icon19.png",
     "default_popup": "/templates/birthdayface.html"
+  },
+  
+  "background": {
+      "scripts": ["main.js"]    
   },
   
   "content_scripts": [
@@ -26,11 +29,8 @@
     }
   ],
   
-  "background": {
-      "scripts": ["main.js"]
-  },
-  
   "permissions": [
-    "tabs"
+    "tabs",
+    "background"
   ]
 }
