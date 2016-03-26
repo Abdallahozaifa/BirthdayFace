@@ -20,30 +20,32 @@ var onFacebookLogin = function(){
         }
       }
     });
+  }else{
+    console.log("Please Log in!");
   }
-  console.log("Logged in!");
 };
 
-var redirect = "https://www.facebook.com/dialog/oauth?client_id=247875252213439&response_type=token&scope=user_friends&redirect_uri=http://www.facebook.com/connect/login_success.html";
+var redirectURL = "https://www.facebook.com/dialog/oauth?client_id=247875252213439&response_type=token&scope=user_friends&redirect_uri=http://www.facebook.com/connect/login_success.html";
 
 
-
+var openTabs = []; // array with all open tabs
 /**
  * Gets all the tabs in the browser
  */
 chrome.tabs.onUpdated.addListener(function(tabID, changeInfo, tab){
+    // if the tab is fully loaded
     if(changeInfo.status == 'complete'){ 
-        // chrome.tabs.getAllInWindow(null, function(tabs){
-        //     for (var i = 0; i < tabs.length; i++) {
-        //         chrome.tabs.sendRequest(tabs[i].id, {message: tabs[i]});   
-        //         // console.log(tabs[i].url);                     
-        //     }
-        // });
+        chrome.tabs.getAllInWindow(null, function(tabs){
+            for (var i = 0; i < tabs.length; i++) {
+                openTabs.push(tabs[i]);                  
+            }
+        });
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, {message: "hello"}, function(response) {
+            chrome.tabs.sendMessage(tabs[0].id, {message: chrome.tabs}, function(response) {
             
             });
         });
+        // onFacebookLogin();
     }
 });
 
