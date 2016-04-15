@@ -1,0 +1,28 @@
+{
+  "name": "birthday-face",
+  "version": "1.0.0",
+  "description": "Displays personalized happy birthday messages to facebook friends with cool faces",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test/test.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdallahozaifa/BirthdayFace.git"
+  },
+  "keywords": [
+    "birthday",
+    "faces",
+    "birthday",
+    "faces",
+    "facebook",
+    "personalized"
+  ],
+  "author": "Hozaifa Abdalla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abdallahozaifa/BirthdayFace/issues"
+  },
+  "homepage": "https://github.com/Abdallahozaifa/BirthdayFace#readme"
+}
