@@ -28,6 +28,13 @@ $(document).ready(function() {
                 var accessToken = response.authResponse.accessToken;
                 console.log("User ID is " + uid);
                 console.log("Access token is " + accessToken);
+
+                FB.api("/me?fields=birthday", function(response) {
+                        if (response && !response.error) {
+                            console.log(response.birthday);
+                        }
+                    }
+                );
             }
             else {
 
@@ -42,6 +49,9 @@ $(document).ready(function() {
                     else {
                         console.log('User cancelled login or did not fully authorize.');
                     }
+                }, {
+                    scope: 'user_birthday',
+                    return_scopes: true
                 });
             }
         });
