@@ -1,0 +1,52 @@
+/* global $, FB, View */
+$(document).ready(function() {
+
+    /* Seting up ajax to cache asynchronous request for the facebook sdk to become available for all pages*/
+    $.ajaxSetup({
+        cache: true,
+        async: false
+    });
+
+    /* Obtains the facebook sdk */
+    $.getScript('//connect.facebook.net/en_US/sdk.js').done(function() {
+
+        /* Initializes the facebook sdk */
+        FB.init({
+            appId: '247875252213439',
+            version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
+        });
+    });
+
+    /* Facebook login button handler*/
+    View.loginButton.click(function() {
+
+        /* Checks if the user is currently logged in */
+        FB.getLoginStatus(function(response) {
+
+            /* The user is logged in and has authenticated */
+            if (response.status === 'connected') {
+                var uid = response.authResponse.userID;
+                var accessToken = response.authResponse.accessToken;
+                console.log("User ID is " + uid);
+                console.log("Access token is " + accessToken);
+            }
+            else {
+
+                /* Prompts the user to authenticate using a login dialog */
+                FB.login(function(response) {
+                    if (response.authResponse) {
+                        console.log('Welcome!  Fetching your information.... ');
+                        FB.api('/me', function(response) {
+                            console.log('Good to see you, ' + response.name + '.');
+                        });
+                    }
+                    else {
+                        console.log('User cancelled login or did not fully authorize.');
+                    }
+                });
+            }
+        });
+    });
+
+
+});
