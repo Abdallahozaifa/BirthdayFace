@@ -4,7 +4,6 @@ $(document).ready(function() {
     /* Seting up ajax to cache asynchronous request for the facebook sdk to become available for all pages*/
     $.ajaxSetup({
         cache: true,
-        async: false
     });
 
     /* Obtains the facebook sdk */
