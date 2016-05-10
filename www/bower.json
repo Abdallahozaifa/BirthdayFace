@@ -1,0 +1,23 @@
+{
+  "name": "Birthday Face",
+  "homepage": "https://github.com/Abdallahozaifa/BirthdayFace",
+  "authors": [
+    "Hozaifa Abdalla <abdallahozaifa19527@gmail.com>"
+  ],
+  "description": "Displays Personalized Happy Birthday messages to facebook friends with cool faces!",
+  "main": "",
+  "keywords": [
+    "facebook",
+    "birthday",
+    "birthday",
+    "face"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
